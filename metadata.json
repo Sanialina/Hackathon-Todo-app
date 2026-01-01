@@ -1,5 +1,5 @@
 {
-  "name": "Prism Task Manager",
+  "name": "Todo app",
   "description": "A premium, 3D-styled task management application with glassmorphism UI, recurring tasks, and persistent local storage.",
   "requestFramePermissions": []
 }
