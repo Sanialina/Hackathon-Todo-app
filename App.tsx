@@ -5,6 +5,7 @@ import TaskCard from './components/TaskCard';
 import TaskModal from './components/TaskModal';
 import FilterBar from './components/FilterBar';
 import Header from './components/Header';
+import Chatbot from './components/Chatbot';
 
 const App: React.FC = () => {
   // --- State ---
@@ -45,7 +46,6 @@ const App: React.FC = () => {
   };
 
   const handleDeleteTask = (id: string) => {
-    // Removed confirmation for immediate deletion and better UX flow
     setTasks((prev) => prev.filter((t) => t.id !== id));
   };
 
@@ -187,6 +187,15 @@ const App: React.FC = () => {
       >
         <Plus className="w-6 h-6 text-white" />
       </button>
+
+      {/* AI Chatbot */}
+      <Chatbot 
+        tasks={tasks} 
+        onAddTask={handleAddTask} 
+        onDeleteTask={handleDeleteTask} 
+        onToggleTask={handleToggleComplete}
+        onUpdateTask={handleEditTask}
+      />
 
       {/* Modal */}
       {isModalOpen && (
